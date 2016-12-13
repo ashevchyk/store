@@ -1,0 +1,6 @@
+<%= simple_form_for @item do |f| %>
+    <%= f.input :title, label: "Назва товару" %>
+    <%= f.input :description, label: "Опис" %>
+    <%= f.input :price, label: "Ціна"  %>
+    <%= f.submit%>
+<% end %>

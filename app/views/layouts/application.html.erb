@@ -9,6 +9,30 @@
   </head>
 
   <body>
+  <header>
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header">
+          <%=  link_to "My favorite Store", root_path, class: "navbar-brand" %>
+        </div>
+        <ul class="nav navbar-nav">
+            <% if user_signed_in? %>
+              <li><%= link_to "Sign_out", destroy_user_session_path, method: :delete  %></li>
+            <% elsif %>
+              <li><%= link_to "Sign_up", new_user_registration_path %></li>
+          <li><%= link_to "Sign_in", new_user_session_path %></li>
+          <% end %>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <% if user_signed_in? %>
+          <li><%= link_to "add book", new_mystore_path %></li>
+          <% end %>
+        </ul>
+      </div>
+    </nav>
+  </header>
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
     <%= yield %>
   </body>
 </html>

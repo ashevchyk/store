@@ -1,0 +1,8 @@
+<h2><%= @item.title %></h2>
+<h2><%= @item.price %></h2>
+<h2><%= @item.description %></h2>
+
+
+
+<%= link_to "Edit", edit_mystore_path(@item) %>
+<%= link_to "delete", mystore_path(@item), method: :delete, data: {confirm: "are u sure?"} %>
